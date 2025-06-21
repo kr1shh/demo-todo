@@ -1,0 +1,8 @@
+.input-container {
+    input{
+        padding: .3rem;
+    }
+    button.input-add{
+        padding: .3rem;
+    }
+}
