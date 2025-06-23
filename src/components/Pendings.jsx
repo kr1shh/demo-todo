@@ -1,17 +1,26 @@
 import "./Pendings.css";
+import { Check } from "lucide-react";
 
-const Pendings = () => {
+const Pendings = ({ todos,handleComplete }) => {
   return (
     <>
-        <div className="pendings">
-            <h2>Pending ToDos</h2>
-            <div className="pending-container">
-                <p>ToDo Title</p>
-                <button className="complete-btn">Tick</button>
+      <div className="pendings">
+        <h2>Pending ToDos</h2>
+        {todos.length === 0 ? (
+          <p>No Pending Todos</p>
+        ) : (
+          todos.map((todo, index) => (
+            <div key={index} className="pending-container">
+              <p>{todo}</p>
+              <button className="complete-btn" onClick={()=>handleComplete(index)}>
+                <Check />
+              </button>
             </div>
-        </div>
+          ))
+        )}
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Pendings
+export default Pendings;

@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: .6rem;
+    gap: 1rem;
     
     .completed-todo{
         background-color: rgb(197, 197, 197);

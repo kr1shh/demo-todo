@@ -1,16 +1,20 @@
-import "./Completed.css"
+import "./Completed.css";
 
-const Completed = () => {
+const Completed = ({ todos }) => {
   return (
     <>
-        <div className="completed-container">
-            <h2>Completed ToDos</h2>
-            <div className="completed-todo">
-                <p>Completed todo</p>
-            </div>
+      <div className="completed-container">
+        <h2>Completed ToDos</h2>
+        <div className="completed-todo">
+          {todos.length === 0 ? (
+            <p>No todos</p>
+          ) : (
+            todos.map((todo, index) => <p key={index}>{todo}</p>)
+          )}
         </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Completed
+export default Completed;
